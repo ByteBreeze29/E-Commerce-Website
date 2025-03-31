@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Payment Issue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            background: #fff;
+            padding: 20px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Report a Payment Issue</h2>
+        <form action="submit_payment_issue.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="order_id">Order ID:</label>
+            <input type="text" id="order_id" name="order_id" required>
+
+            <label for="payment_method">Payment Method:</label>
+            <select id="payment_method" name="payment_method" required>
+                <option value="credit_card">Credit Card</option>
+                <option value="debit_card">Debit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank_transfer">Bank Transfer</option>
+                <option value="upi">UPI</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="issue_type">Issue Type:</label>
+            <select id="issue_type" name="issue_type" required>
+                <option value="failed_transaction">Failed Transaction</option>
+                <option value="double_charge">Double Charge</option>
+                <option value="refund_not_received">Refund Not Received</option>
+                <option value="unauthorized_charge">Unauthorized Charge</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="details">Describe Your Issue:</label>
+            <textarea id="details" name="details" rows="4" required></textarea>
+
+            <label for="screenshot">Upload Screenshot (if any):</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*">
+
+            <button type="submit">Submit Issue</button>
+        </form>
+    </div>
+
+</body>
+</html>

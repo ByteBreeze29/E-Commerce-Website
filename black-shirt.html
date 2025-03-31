@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Shirt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e44d26;
+            margin-bottom: 10px;
+        }
+        .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .add-to-cart {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .add-to-cart:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="shirt2.jpeg" alt="Black Shirt" class="product-img">
+        <h2>Classic Black Shirt</h2>
+        <p class="price">₹799</p>
+        <p class="description">A stylish black shirt perfect for casual and formal wear. Made from high-quality cotton for maximum comfort.</p>
+        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <script>
+        function addToCart() {
+            alert("Black Shirt has been added to your cart!");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Required meta tags-->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width", initial-scale="1", shrink-to-fit="no"/>
+
+
+<style>
+  * Features Section */
+.feature {
+    background: linear-gradient(135deg, #001f3f, #003366, #3399ff); /* Dark blue, Navy blue, Light blue */
+    padding: 60px 0;
+    color: white;
+}
+
+/* Section Title */
+.section_title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+/* Feature Card Styling */
+.feature .col-md-4 {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px); /* Adds a glass effect */
+}
+
+/* Hover Effect for Cards */
+.feature .col-md-4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Icon Styling */
+.feature i {
+    color: #ffcc00; /* Gold color for contrast */
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect for Icons */
+.feature .col-md-4:hover i {
+    color: #ffdd44;
+}
+
+/* Text Styling */
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #ddd; /* Light grey for readability */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .feature .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
+.footer_section {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(to right,darkblue,lightblue,pink);
+    color: white;
+}
+
+.footer_section .container-fluid {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer_title img {
+    width: 150px;
+}
+
+.footer_links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_links ul li {
+    margin-bottom: 10px;
+}
+
+.footer_links ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer_links ul li a:hover {
+    color: lightgray;
+}
+
+.border-top {
+    border-top: 1px solid white;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.backtop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.backtop:hover {
+    background: lightgray;
+}
+/* General Section Styling */
+.products {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.section_title h1 {
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+
+/* Filters Sidebar */
+.col-md-3 {
+    border-right: 1px solid #ddd;
+}
+
+.list-group-item {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.list-group-item:hover {
+    background-color: #ddd;
+}
+
+/* Products Grid */
+.col-md-9 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.single_product {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.single_product:hover {
+    transform: scale(1.05);
+}
+
+.product_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-caption {
+    margin-top: 15px;
+}
+
+.product-ratting i {
+    color: #ffcc00;
+}
+
+h5 a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+h5 a:hover {
+    color: #007bff;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* New Product Badge */
+.new_product .badge {
+    background: red;
+    color: white;
+    font-size: 14px;
+    border-radius: 50px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .col-md-3 {
+        border-right: none;
+        margin-bottom: 20px;
+    }
+    .single_product {
+        margin-bottom: 20px;
+    }
+}
+</style>
+     <!--bootstrap.css--> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> 
+     
+      <!-- fontawesome cdn For Icons --> 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" 
+      integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" 
+      crossorigin="anonymous" />
+
+      <title> E-Commerce Website </title>
+</head>
+<body id="top">
+     <!-- ==============header menu section starts here============== --> 
+  <section class="header_menu" id="header_menu"> 
+    <div class="container-fluid px-0 shadow"> 
+      <nav class="navbar navbar-expand-lg navbar-light bg-light py-3  "> 
+        <a class="navbar-brand pl-5 pl-small-0" href="index.html"> 
+          <img src="logo.png" class="img img-fluid" width="120px" 
+alt="logo"> 
+        </a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+data-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" aria-expanded="false" 
+aria-label="Toggle navigation"> 
+          <span class="navbar-toggler-icon"></span> 
+        </button> 
+ 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+          <ul class="navbar-nav mx-auto"> 
+            <li class="nav-item active"> 
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a> 
+            </li> 
+            <li class="nav-item"> 
+              <a class="nav-link" href="product.html">Product</a> 
+            </li> 
+            <li class="nav-item"> 
+              <a class="nav-link" href="category.html">Category</a> 
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a> 
+            </li> 
+            <li class="nav-item"> 
+              <a class="nav-link" href="contact.html">Contact Us</a> 
+            </li> 
+            <!-- <li class="nav-item dropdown"> 
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+role="button" data-toggle="dropdown" 
+                aria-haspopup="true" aria-expanded="false"> 
+                Dropdown 
+              </a> 
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                <a class="dropdown-item" href="#">Action</a> 
+                <a class="dropdown-item" href="#">Another action</a> 
+                <div class="dropdown-divider"></div> 
+                <a class="dropdown-item" href="#">Something else here</a> 
+              </div> 
+            </li> --> 
+          </ul> 
+          <div class="search mr-3"> 
+            <a href="search.html" class="btn btn-sm btn-outline-primary"> 
+              Search 
+            </a> 
+          </div> 
+          <div class="cart"> 
+            <a href="cart.html"> 
+              <i class="fas fa-shopping-cart fa-2x"></i> 
+              <span class="badge badge-pill badge-primary">24</span> 
+            </a> 
+          </div> 
+        </div> 
+      </nav> 
+    </div> 
+  </section> 
+  <!-- ==============header menu section ends here============== -->
+   <!--product section starts here-->
+  
+  <section class="products py-5 my-5" id="products">
+      <div class="container">
+          <div class="section_title text-center mb-5">
+              <h1 class="text-capitalize text-black" style="font-style: oblique; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-decoration: underline;">Products</h1>
+          </div>
+          <div class="row">
+              <!-- Filters Section -->
+              <div class="col-md-3 border-right mb-5">
+                  <h4 class="mb-4 border-bottom">Filters</h4>
+                  <div class="mb-4">
+                      <label><b>Category</b></label>
+                      <ul class="list-group">
+                          <li class="list-group-item text-black">Category 1</li>
+                          <li class="list-group-item text-black">Category 2</li>
+                          <li class="list-group-item text-black">Category 3</li>
+                          <li class="list-group-item text-black">Category 4</li>
+                          <li class="list-group-item text-black">Category 5</li>
+                      </ul>
+                  </div>
+                  <div>
+                      <form>
+                          <div class="form-group">
+                              <label><b>Price</b></label>
+                              <input type="range" min="100" max="1000" step="100" class="form-control-range">
+                          </div>
+                      </form>
+                      <div class="d-flex justify-content-between">
+                          <label>₹100</label>
+                          <label>₹1000</label>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Products Section -->
+              <div class="col-md-9">
+                  <div class="row">
+                      <!-- Product 1 -->
+                      <div class="col-md-4 col-sm-6 col-12 mb-4">
+                          <div class="single_product shadow text-center p-3">
+                              <div class="product_img">
+                                  <a href="product_detail.html"><img src="hoodie1.jpeg" class="img-fluid" alt="Product 1"></a>
+                              </div>
+                              <div class="product-caption my-3">
+                                  <div class="product-ratting">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </div>
+                                  <h5><a href="product_detail.html">Green Dress</a></h5>
+                                  <div class="price"><b>₹400</b></div>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <!-- Product 2 -->
+                      <div class="col-md-4 col-sm-6 col-12 mb-4">
+                          <div class="single_product shadow text-center p-3">
+                              <div class="product_img">
+                                  <a href="product_detail.html"><img src="hoodie2.jpeg" class="img-fluid" alt="Product 2"></a>
+                                  <div class="new_product">
+                                      <span class="badge badge-danger badge-pill py-2 px-3">New</span>
+                                  </div>
+                              </div>
+                              <div class="product-caption my-3">
+                                  <div class="product-ratting">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </div>
+                                  <h5><a href="product_detail.html">Red Hoodie</a></h5>
+                                  <div class="price"><b>₹500</b></div>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <!-- Product 3 -->
+                      <div class="col-md-4 col-sm-6 col-12 mb-4">
+                          <div class="single_product shadow text-center p-3">
+                              <div class="product_img">
+                                  <a href="product_detail.html"><img src="hoodie3.jpeg" class="img-fluid" alt="Product 3"></a>
+                                  <div class="new_product">
+                                      <span class="badge badge-danger badge-pill py-2 px-3">New</span>
+                                  </div>
+                              </div>
+                              <div class="product-caption my-3">
+                                  <div class="product-ratting">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </div>
+                                  <h5><a href="product_detail.html">Blue Hoodie</a></h5>
+                                  <div class="price"><b>₹450</b></div>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <!-- Product 4 -->
+                      <div class="col-md-4 col-sm-6 col-12 mb-4">
+                          <div class="single_product shadow text-center p-3">
+                              <div class="product_img">
+                                  <a href="product_detail.html"><img src="hoodie6.jpeg" class="img-fluid" alt="Product 4"></a>
+                                  <div class="new_product">
+                                      <span class="badge badge-danger badge-pill py-2 px-3">New</span>
+                                  </div>
+                              </div>
+                              <div class="product-caption my-3">
+                                  <div class="product-ratting">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </div>
+                                  <h5><a href="product_detail.html">Black Hoodie</a></h5>
+                                  <div class="price"><b>₹550</b></div>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <!-- Product 5 -->
+                      <div class="col-md-4 col-sm-6 col-12 mb-4">
+                          <div class="single_product shadow text-center p-3">
+                              <div class="product_img">
+                                  <a href="product_detail.html"><img src="hoodie1.jpeg" class="img-fluid" alt="Product 5"></a>
+                                  <div class="new_product">
+                                      <span class="badge badge-danger badge-pill py-2 px-3">New</span>
+                                  </div>
+                              </div>
+                              <div class="product-caption my-3">
+                                  <div class="product-ratting">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </div>
+                                  <h5><a href="product_detail.html">Grey Hoodie</a></h5>
+                                  <div class="price"><b>₹600</b></div>
+                              </div>
+                          </div>
+                      </div>
+  
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+<!---Product section ends-->
+<section class="footer_section pt-5 pb-2" id="footer_section"> 
+  <footer> 
+    <div class="container-fluid"> 
+      <div class="row"> 
+        <div class="col-md-3 col-6 pl-5 pl-small-15"> 
+          <div class="footer_title"> 
+            <a href="index.html"><img src="logo.png" width="150px" class="img img-fluid" alt="logo"></a> 
+          </div> 
+          <div> 
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, totam est illum ipsum quas ad 
+            dignissimos magni veritatis natus voluptatem. 
+          </div> 
+        </div> 
+        <div class="col-md-3 col-6"> 
+          <div class="footer_title pt-3 mb-3"> 
+            <h3>Quick Links</h3> 
+          </div> 
+          <div class="footer_links"> 
+            <ul> 
+              <li><a href="about.html">About</a></li> 
+              <li><a href="javascript:;">Offers & Discounts</a></li> 
+              <li><a href="javascript:;">Get Coupon</a></li> 
+              <li><a href="contact.html">Contact Us</a></li> 
+            </ul> 
+          </div> 
+        </div>
+        <div class="col-md-3 col-6"> 
+          <div class="footer_title pt-3 mb-3"> 
+            <h3>New Products</h3> 
+          </div> 
+          <div class="footer_links"> 
+            <ul> 
+              <li><a href="javascript:;">Woman Cloth</a></li> 
+              <li><a href="javascript:;">Fashion Accessories</a></li> 
+              <li><a href="javascript:;">Man Accessories</a></li> 
+              <li><a href="javascript:;">Rubber made Toys</a></li> 
+            </ul> 
+          </div> 
+        </div> 
+        <div class="col-md-3 col-6"> 
+          <div class="footer_title pt-3 mb-3"> 
+            <h3>Support</h3> 
+          </div> 
+          <div class="footer_links"> 
+            <ul> 
+              <li><a href="javascript:;">Frequently Asked Questions</a></li> 
+              <li><a href="javascript:;">Terms & Conditions</a></li> 
+              <li><a href="javascript:;">Privacy Policy</a></li> 
+              <li><a href="javascript:;">Report a Payment Issue</a></li> 
+            </ul> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="border-top"> 
+      <h6 class="text-center mt-3">Copyright ©2020 All rights reserved 
+      </h6> 
+    </div> 
+  </footer> 
+</section> 
+<div class="backtop"> 
+  <a id="button" href="#top" class="btn btn-lg btn-outline-danger" role="button"> 
+    <i class="fas fa-chevron-up text-dark"></i> 
+  </a> 
+</div> 
+<!-- ==============footer ends here============== -->
+
+
+    <!-- jQuery (Full version) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/all.js"></script>
+    <script>
+      
+document.addEventListener("DOMContentLoaded", function () {
+  // Define mapping of placeholder links to actual URLs
+  const linkMappings = {
+      "Frequently Asked Questions": "faq.html",
+      "Terms & Conditions": "terms.html",
+      "Privacy Policy": "privacy.html",
+      "Report a Payment Issue": "report.html",
+      "Offers & Discounts": "offers.html",
+      "Get Coupon": "coupons.html",
+      "Woman Cloth": "women-clothing.html",
+      "Fashion Accessories": "fashion-accessories.html",
+      "Man Accessories": "men-accessories.html",
+      "Rubber made Toys": "toys.html"
+  };
+
+  // Select all links with href="javascript:;"
+  const links = document.querySelectorAll('a[href="javascript:;"]');
+
+  links.forEach(link => {
+      link.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default behavior
+          const linkText = link.textContent.trim(); // Get link text
+          const targetURL = linkMappings[linkText];
+
+          if (targetURL) {
+              window.location.href = targetURL; // Redirect
+          } else {
+              console.warn("No URL mapped for:", linkText);
+          }
+      });
+  });
+});
+</script>
+</body>
+</html>
